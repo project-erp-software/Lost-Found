@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Lost & Found</title>
+    <link rel="icon" href="assets/page_icon.png" type="image/png">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/nav-bar.css">
+    <link rel="stylesheet" href="styles/seach-item.css">
+    <link rel="stylesheet" href="styles/main-content.css">
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <h1 class="logo">KU Campus<span>Finder</span></h1>
+            <button id="addItemBtn" class="btn primary-btn">+ Add Item</button>
+        </div>
+    </nav>
+
+    <header class="search-item-header">
+        <h2>Find what you lost, return what you found.</h2>
+        <h4>Help others recover their belongings.</h4>
+        <div class="search-filter-container">
+            <input type="text" id="searchInput" placeholder="Search for items (e.g., iPhone, Keys)...">
+
+            <select id="categoryFilter">
+                <option value="All">All Categories</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Keys/ID">Keys/ID</option>
+                <option value="Books">Books</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="tabs">
+            <button class="tab-btn active" data-status="All">All</button>
+            <button class="tab-btn" data-status="Lost">Lost</button>
+            <button class="tab-btn" data-status="Found">Found</button>
+        </div>
+        
+        <div id="itemsGrid" class="items-grid">
+        </div>
+    </main>
+
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closePostModal">&times;</span>
+            <h3>Post a Lost or Found Item</h3>
+            <form id="postForm">
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="itemStatus" required>
+                        <option value="Lost">I Lost Something</option>
+                        <option value="Found">I Found Something</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Item Name <span class="required-star">*</span></label>
+                    <input type="text" id="itemName" placeholder="Eg: Student ID" required>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="itemCategory" required>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Keys/ID">Keys/ID</option>
+                        <option value="Books">Books</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Location (Last seen / Found at) <span class="required-star">*</span></label>
+                    <input type="text" id="itemLocation" placeholder="Eg: SET 3rd Floor" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Upload Image <span class="required-star">*</span></label>
+                    <input type="file" id="itemImage" accept="image/*" class="file-input" required>
+                </div>
+                
+                <button type="submit" class="btn primary-btn full-width">Submit Item</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeContactModal">&times;</span>
+            <h3>Contact User</h3>
+            <p id="contactItemName" class="contact-subtitle">Regarding</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>Your Name <span class="required-star">*</span></label>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Message <span class="required-star">*</span></label>
+                    <textarea rows="6" placeholder="Hi, I think this is mine..." required></textarea>
+                </div>
+                <button type="submit" class="btn primary-btn full-width">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close-btn" id="closeImageModal" style="font-size: 2rem; color: white; font-weight: 500; margin-right: 50px;">&times;</span>
+        <img class="modal-content-img" id="fullSizeImage" alt="Full size view">
+    </div>
+
+    <div class="Toast"></div>
+
+    <script src="/script/display.js"></script>
+    <script src="/script/listener.js"></script>
+    <script src="/script/general.js"></script>
+</body>
+</html>

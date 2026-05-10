@@ -1,0 +1,39 @@
+:root {
+    --primary-color: rgb(167, 55, 55);
+    --primary-hover: rgb(101, 47, 47);
+    --bg-color: #f3f4f6;
+    --surface-color: #ffffff;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+}
+
+button {
+    outline: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.MessageToast {
+    position: fixed;
+    bottom: 50px;
+    left: 45%;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    background-color: rgb(255, 215, 0);
+    color: black;
+    transition: 0.3s ease;
+    transform: translateX(-20px) translateY(-20px);
+}
